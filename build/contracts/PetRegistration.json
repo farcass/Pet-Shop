@@ -1,0 +1,1545 @@
+{
+  "contractName": "PetRegistration",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "petCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "pets",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "breed",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "age",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "photoUrl",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_breed",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_age",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_photoUrl",
+          "type": "string"
+        }
+      ],
+      "name": "registerPet",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"petCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"pets\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"breed\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"age\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"photoUrl\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_breed\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_age\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_photoUrl\",\"type\":\"string\"}],\"name\":\"registerPet\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Registration.sol\":\"PetRegistration\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Registration.sol\":{\"keccak256\":\"0x39b3bbef8346006b3ab2d1a904be145adbdb79b4d55f74da8b8a30a76a030c2f\",\"urls\":[\"bzz-raw://4a52a8c31e1482a4f9bdde8c1e21861b0e07c1d43de4a5c10f0b5d305d572f82\",\"dweb:/ipfs/QmX6hDCEjwwkRsRV83RjcabpUdkrCD7LQwCXr8525T5zH1\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506107f0806100206000396000f3fe6080604052600436106100345760003560e01c806333867b4214610039578063cd619f581461022c578063cfb869bf14610257575b600080fd5b61022a6004803603608081101561004f57600080fd5b810190808035906020019064010000000081111561006c57600080fd5b82018360208201111561007e57600080fd5b803590602001918460018302840111640100000000831117156100a057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561010357600080fd5b82018360208201111561011557600080fd5b8035906020019184600183028401116401000000008311171561013757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929080359060200190929190803590602001906401000000008111156101a457600080fd5b8201836020820111156101b657600080fd5b803590602001918460018302840111640100000000831117156101d857600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506103ea565b005b34801561023857600080fd5b50610241610518565b6040518082815260200191505060405180910390f35b34801561026357600080fd5b506102906004803603602081101561027a57600080fd5b810190808035906020019092919050505061051e565b60405180806020018060200185815260200180602001848103845288818151815260200191508051906020019080838360005b838110156102de5780820151818401526020810190506102c3565b50505050905090810190601f16801561030b5780820380516001836020036101000a031916815260200191505b50848103835287818151815260200191508051906020019080838360005b83811015610344578082015181840152602081019050610329565b50505050905090810190601f1680156103715780820380516001836020036101000a031916815260200191505b50848103825285818151815260200191508051906020019080838360005b838110156103aa57808201518184015260208101905061038f565b50505050905090810190601f1680156103d75780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b662386f26fc10000341015610467576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f526567697374726174696f6e2066656520697320302e3031206574686572000081525060200191505060405180910390fd5b604051806080016040528085815260200184815260200183815260200182815250600080600154815260200190815260200160002060008201518160000190805190602001906104b8929190610716565b5060208201518160010190805190602001906104d5929190610716565b506040820151816002015560608201518160030190805190602001906104fc929190610716565b5090505060016000815480929190600101919050555050505050565b60015481565b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105ca5780601f1061059f576101008083540402835291602001916105ca565b820191906000526020600020905b8154815290600101906020018083116105ad57829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106685780601f1061063d57610100808354040283529160200191610668565b820191906000526020600020905b81548152906001019060200180831161064b57829003601f168201915b505050505090806002015490806003018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561070c5780601f106106e15761010080835404028352916020019161070c565b820191906000526020600020905b8154815290600101906020018083116106ef57829003601f168201915b5050505050905084565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061075757805160ff1916838001178555610785565b82800160010185558215610785579182015b82811115610784578251825591602001919060010190610769565b5b5090506107929190610796565b5090565b6107b891905b808211156107b457600081600090555060010161079c565b5090565b9056fea265627a7a72315820314938fcff499934c656ef7f68c4ccfab4dde60765922b48352b53518311ffb864736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600436106100345760003560e01c806333867b4214610039578063cd619f581461022c578063cfb869bf14610257575b600080fd5b61022a6004803603608081101561004f57600080fd5b810190808035906020019064010000000081111561006c57600080fd5b82018360208201111561007e57600080fd5b803590602001918460018302840111640100000000831117156100a057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561010357600080fd5b82018360208201111561011557600080fd5b8035906020019184600183028401116401000000008311171561013757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929080359060200190929190803590602001906401000000008111156101a457600080fd5b8201836020820111156101b657600080fd5b803590602001918460018302840111640100000000831117156101d857600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506103ea565b005b34801561023857600080fd5b50610241610518565b6040518082815260200191505060405180910390f35b34801561026357600080fd5b506102906004803603602081101561027a57600080fd5b810190808035906020019092919050505061051e565b60405180806020018060200185815260200180602001848103845288818151815260200191508051906020019080838360005b838110156102de5780820151818401526020810190506102c3565b50505050905090810190601f16801561030b5780820380516001836020036101000a031916815260200191505b50848103835287818151815260200191508051906020019080838360005b83811015610344578082015181840152602081019050610329565b50505050905090810190601f1680156103715780820380516001836020036101000a031916815260200191505b50848103825285818151815260200191508051906020019080838360005b838110156103aa57808201518184015260208101905061038f565b50505050905090810190601f1680156103d75780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b662386f26fc10000341015610467576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f526567697374726174696f6e2066656520697320302e3031206574686572000081525060200191505060405180910390fd5b604051806080016040528085815260200184815260200183815260200182815250600080600154815260200190815260200160002060008201518160000190805190602001906104b8929190610716565b5060208201518160010190805190602001906104d5929190610716565b506040820151816002015560608201518160030190805190602001906104fc929190610716565b5090505060016000815480929190600101919050555050505050565b60015481565b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105ca5780601f1061059f576101008083540402835291602001916105ca565b820191906000526020600020905b8154815290600101906020018083116105ad57829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106685780601f1061063d57610100808354040283529160200191610668565b820191906000526020600020905b81548152906001019060200180831161064b57829003601f168201915b505050505090806002015490806003018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561070c5780601f106106e15761010080835404028352916020019161070c565b820191906000526020600020905b8154815290600101906020018083116106ef57829003601f168201915b5050505050905084565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061075757805160ff1916838001178555610785565b82800160010185558215610785579182015b82811115610784578251825591602001919060010190610769565b5b5090506107929190610796565b5090565b6107b891905b808211156107b457600081600090555060010161079c565b5090565b9056fea265627a7a72315820314938fcff499934c656ef7f68c4ccfab4dde60765922b48352b53518311ffb864736f6c63430005100032",
+  "sourceMap": "27:614:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:614:2;;;;;;;",
+  "deployedSourceMap": "27:614:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;254:384;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;254:384:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;254:384:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;254:384:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;254:384:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;254:384:2;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;254:384:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;254:384:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;254:384:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;254:384:2;;;;;;;;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;254:384:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;254:384:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;254:384:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;254:384:2;;;;;;;;;;;;;;;:::i;:::-;;222:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;222:23:2;;;:::i;:::-;;;;;;;;;;;;;;;;;;;179:36;;8:9:-1;5:2;;;30:1;27;20:12;5:2;179:36:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;179:36:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;179:36:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;179:36:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;179:36:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;254:384;404:10;391:9;:23;;383:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;479:128;;;;;;;;504:5;479:128;;;;531:6;479:128;;;;557:4;479:128;;;;586:9;479:128;;;462:4;:14;467:8;;462:14;;;;;;;;;;;:145;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;620:8;;:10;;;;;;;;;;;;;254:384;;;;:::o;222:23::-;;;;:::o;179:36::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;27:614::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract PetRegistration {\r\n    struct Pet {\r\n        string name;\r\n        string breed;\r\n        uint256 age;\r\n        string photoUrl;\r\n    }\r\n\r\n    mapping (uint256 => Pet) public pets;\r\n    uint256 public petCount;\r\n\r\n    function registerPet(string memory _name, string memory _breed, uint256 _age, string memory _photoUrl) public payable {\r\n        require(msg.value >= 0.01 ether, \"Registration fee is 0.01 ether\");\r\n\r\n        pets[petCount] = Pet({\r\n            name: _name,\r\n            breed: _breed,\r\n            age: _age,\r\n            photoUrl: _photoUrl\r\n        });\r\n\r\n        petCount++;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\sophi\\Desktop\\pet-shop-final\\contracts\\Registration.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Registration.sol",
+    "exportedSymbols": {
+      "PetRegistration": [
+        132
+      ]
+    },
+    "id": 133,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 82,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 132,
+        "linearizedBaseContracts": [
+          132
+        ],
+        "name": "PetRegistration",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "PetRegistration.Pet",
+            "id": 91,
+            "members": [
+              {
+                "constant": false,
+                "id": 84,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 91,
+                "src": "81:11:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 83,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "81:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 86,
+                "name": "breed",
+                "nodeType": "VariableDeclaration",
+                "scope": 91,
+                "src": "103:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 85,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "103:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 88,
+                "name": "age",
+                "nodeType": "VariableDeclaration",
+                "scope": 91,
+                "src": "126:11:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 87,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "126:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 90,
+                "name": "photoUrl",
+                "nodeType": "VariableDeclaration",
+                "scope": 91,
+                "src": "148:15:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 89,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "148:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Pet",
+            "nodeType": "StructDefinition",
+            "scope": 132,
+            "src": "59:112:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 95,
+            "name": "pets",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "179:36:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Pet_$91_storage_$",
+              "typeString": "mapping(uint256 => struct PetRegistration.Pet)"
+            },
+            "typeName": {
+              "id": 94,
+              "keyType": {
+                "id": 92,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "188:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "179:24:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Pet_$91_storage_$",
+                "typeString": "mapping(uint256 => struct PetRegistration.Pet)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 93,
+                "name": "Pet",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 91,
+                "src": "199:3:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Pet_$91_storage_ptr",
+                  "typeString": "struct PetRegistration.Pet"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 97,
+            "name": "petCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 132,
+            "src": "222:23:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 96,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 130,
+              "nodeType": "Block",
+              "src": "372:266:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 112,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 109,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 147,
+                            "src": "391:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 110,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "391:9:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "302e3031",
+                          "id": 111,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "404:10:2",
+                          "subdenomination": "ether",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_10000000000000000_by_1",
+                            "typeString": "int_const 10000000000000000"
+                          },
+                          "value": "0.01"
+                        },
+                        "src": "391:23:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "526567697374726174696f6e2066656520697320302e3031206574686572",
+                        "id": 113,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "416:32:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_439f4e0cba18e99475bcc459540ca2fab709e12c0a514536bcbb1ce379b8ccc1",
+                          "typeString": "literal_string \"Registration fee is 0.01 ether\""
+                        },
+                        "value": "Registration fee is 0.01 ether"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_439f4e0cba18e99475bcc459540ca2fab709e12c0a514536bcbb1ce379b8ccc1",
+                          "typeString": "literal_string \"Registration fee is 0.01 ether\""
+                        }
+                      ],
+                      "id": 108,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        150,
+                        151
+                      ],
+                      "referencedDeclaration": 151,
+                      "src": "383:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 114,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "383:66:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 115,
+                  "nodeType": "ExpressionStatement",
+                  "src": "383:66:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 125,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 116,
+                        "name": "pets",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 95,
+                        "src": "462:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Pet_$91_storage_$",
+                          "typeString": "mapping(uint256 => struct PetRegistration.Pet storage ref)"
+                        }
+                      },
+                      "id": 118,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 117,
+                        "name": "petCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 97,
+                        "src": "467:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "462:14:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Pet_$91_storage",
+                        "typeString": "struct PetRegistration.Pet storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 120,
+                          "name": "_name",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 99,
+                          "src": "504:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 121,
+                          "name": "_breed",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 101,
+                          "src": "531:6:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 122,
+                          "name": "_age",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 103,
+                          "src": "557:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 123,
+                          "name": "_photoUrl",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 105,
+                          "src": "586:9:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 119,
+                        "name": "Pet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 91,
+                        "src": "479:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Pet_$91_storage_ptr_$",
+                          "typeString": "type(struct PetRegistration.Pet storage pointer)"
+                        }
+                      },
+                      "id": 124,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [
+                        "name",
+                        "breed",
+                        "age",
+                        "photoUrl"
+                      ],
+                      "nodeType": "FunctionCall",
+                      "src": "479:128:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Pet_$91_memory",
+                        "typeString": "struct PetRegistration.Pet memory"
+                      }
+                    },
+                    "src": "462:145:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Pet_$91_storage",
+                      "typeString": "struct PetRegistration.Pet storage ref"
+                    }
+                  },
+                  "id": 126,
+                  "nodeType": "ExpressionStatement",
+                  "src": "462:145:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "620:10:2",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 127,
+                      "name": "petCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 97,
+                      "src": "620:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "620:10:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 131,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerPet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 106,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 99,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "275:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 98,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 101,
+                  "name": "_breed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "296:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 100,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "296:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 103,
+                  "name": "_age",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "318:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 102,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "318:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 105,
+                  "name": "_photoUrl",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "332:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 104,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "332:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "274:82:2"
+            },
+            "returnParameters": {
+              "id": 107,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "372:0:2"
+            },
+            "scope": 132,
+            "src": "254:384:2",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 133,
+        "src": "27:614:2"
+      }
+    ],
+    "src": "0:643:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/Registration.sol",
+      "exportedSymbols": {
+        "PetRegistration": [
+          132
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 82,
+        "name": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            132
+          ],
+          "name": "PetRegistration",
+          "scope": 133
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "PetRegistration.Pet",
+              "name": "Pet",
+              "scope": 132,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "name",
+                  "scope": 91,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 83,
+                    "name": "ElementaryTypeName",
+                    "src": "81:6:2"
+                  }
+                ],
+                "id": 84,
+                "name": "VariableDeclaration",
+                "src": "81:11:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "breed",
+                  "scope": 91,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 85,
+                    "name": "ElementaryTypeName",
+                    "src": "103:6:2"
+                  }
+                ],
+                "id": 86,
+                "name": "VariableDeclaration",
+                "src": "103:12:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "age",
+                  "scope": 91,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 87,
+                    "name": "ElementaryTypeName",
+                    "src": "126:7:2"
+                  }
+                ],
+                "id": 88,
+                "name": "VariableDeclaration",
+                "src": "126:11:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "photoUrl",
+                  "scope": 91,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 89,
+                    "name": "ElementaryTypeName",
+                    "src": "148:6:2"
+                  }
+                ],
+                "id": 90,
+                "name": "VariableDeclaration",
+                "src": "148:15:2"
+              }
+            ],
+            "id": 91,
+            "name": "StructDefinition",
+            "src": "59:112:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "pets",
+              "scope": 132,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => struct PetRegistration.Pet)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => struct PetRegistration.Pet)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 92,
+                    "name": "ElementaryTypeName",
+                    "src": "188:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Pet",
+                      "referencedDeclaration": 91,
+                      "type": "struct PetRegistration.Pet"
+                    },
+                    "id": 93,
+                    "name": "UserDefinedTypeName",
+                    "src": "199:3:2"
+                  }
+                ],
+                "id": 94,
+                "name": "Mapping",
+                "src": "179:24:2"
+              }
+            ],
+            "id": 95,
+            "name": "VariableDeclaration",
+            "src": "179:36:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "petCount",
+              "scope": 132,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 96,
+                "name": "ElementaryTypeName",
+                "src": "222:7:2"
+              }
+            ],
+            "id": 97,
+            "name": "VariableDeclaration",
+            "src": "222:23:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "registerPet",
+              "scope": 132,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_name",
+                      "scope": 131,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 98,
+                        "name": "ElementaryTypeName",
+                        "src": "275:6:2"
+                      }
+                    ],
+                    "id": 99,
+                    "name": "VariableDeclaration",
+                    "src": "275:19:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_breed",
+                      "scope": 131,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 100,
+                        "name": "ElementaryTypeName",
+                        "src": "296:6:2"
+                      }
+                    ],
+                    "id": 101,
+                    "name": "VariableDeclaration",
+                    "src": "296:20:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_age",
+                      "scope": 131,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 102,
+                        "name": "ElementaryTypeName",
+                        "src": "318:7:2"
+                      }
+                    ],
+                    "id": 103,
+                    "name": "VariableDeclaration",
+                    "src": "318:12:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_photoUrl",
+                      "scope": 131,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 104,
+                        "name": "ElementaryTypeName",
+                        "src": "332:6:2"
+                      }
+                    ],
+                    "id": 105,
+                    "name": "VariableDeclaration",
+                    "src": "332:23:2"
+                  }
+                ],
+                "id": 106,
+                "name": "ParameterList",
+                "src": "274:82:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 107,
+                "name": "ParameterList",
+                "src": "372:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_439f4e0cba18e99475bcc459540ca2fab709e12c0a514536bcbb1ce379b8ccc1",
+                                  "typeString": "literal_string \"Registration fee is 0.01 ether\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                150,
+                                151
+                              ],
+                              "referencedDeclaration": 151,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 108,
+                            "name": "Identifier",
+                            "src": "383:7:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": ">=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "value",
+                                  "referencedDeclaration": null,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 147,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 109,
+                                    "name": "Identifier",
+                                    "src": "391:3:2"
+                                  }
+                                ],
+                                "id": 110,
+                                "name": "MemberAccess",
+                                "src": "391:9:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "302e3031",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": "ether",
+                                  "token": "number",
+                                  "type": "int_const 10000000000000000",
+                                  "value": "0.01"
+                                },
+                                "id": 111,
+                                "name": "Literal",
+                                "src": "404:10:2"
+                              }
+                            ],
+                            "id": 112,
+                            "name": "BinaryOperation",
+                            "src": "391:23:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "526567697374726174696f6e2066656520697320302e3031206574686572",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Registration fee is 0.01 ether\"",
+                              "value": "Registration fee is 0.01 ether"
+                            },
+                            "id": 113,
+                            "name": "Literal",
+                            "src": "416:32:2"
+                          }
+                        ],
+                        "id": 114,
+                        "name": "FunctionCall",
+                        "src": "383:66:2"
+                      }
+                    ],
+                    "id": 115,
+                    "name": "ExpressionStatement",
+                    "src": "383:66:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct PetRegistration.Pet storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct PetRegistration.Pet storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 95,
+                                  "type": "mapping(uint256 => struct PetRegistration.Pet storage ref)",
+                                  "value": "pets"
+                                },
+                                "id": 116,
+                                "name": "Identifier",
+                                "src": "462:4:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 97,
+                                  "type": "uint256",
+                                  "value": "petCount"
+                                },
+                                "id": 117,
+                                "name": "Identifier",
+                                "src": "467:8:2"
+                              }
+                            ],
+                            "id": 118,
+                            "name": "IndexAccess",
+                            "src": "462:14:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                "name",
+                                "breed",
+                                "age",
+                                "photoUrl"
+                              ],
+                              "type": "struct PetRegistration.Pet memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 91,
+                                  "type": "type(struct PetRegistration.Pet storage pointer)",
+                                  "value": "Pet"
+                                },
+                                "id": 119,
+                                "name": "Identifier",
+                                "src": "479:3:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 99,
+                                  "type": "string memory",
+                                  "value": "_name"
+                                },
+                                "id": 120,
+                                "name": "Identifier",
+                                "src": "504:5:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 101,
+                                  "type": "string memory",
+                                  "value": "_breed"
+                                },
+                                "id": 121,
+                                "name": "Identifier",
+                                "src": "531:6:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 103,
+                                  "type": "uint256",
+                                  "value": "_age"
+                                },
+                                "id": 122,
+                                "name": "Identifier",
+                                "src": "557:4:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 105,
+                                  "type": "string memory",
+                                  "value": "_photoUrl"
+                                },
+                                "id": 123,
+                                "name": "Identifier",
+                                "src": "586:9:2"
+                              }
+                            ],
+                            "id": 124,
+                            "name": "FunctionCall",
+                            "src": "479:128:2"
+                          }
+                        ],
+                        "id": 125,
+                        "name": "Assignment",
+                        "src": "462:145:2"
+                      }
+                    ],
+                    "id": 126,
+                    "name": "ExpressionStatement",
+                    "src": "462:145:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "++",
+                          "prefix": false,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 97,
+                              "type": "uint256",
+                              "value": "petCount"
+                            },
+                            "id": 127,
+                            "name": "Identifier",
+                            "src": "620:8:2"
+                          }
+                        ],
+                        "id": 128,
+                        "name": "UnaryOperation",
+                        "src": "620:10:2"
+                      }
+                    ],
+                    "id": 129,
+                    "name": "ExpressionStatement",
+                    "src": "620:10:2"
+                  }
+                ],
+                "id": 130,
+                "name": "Block",
+                "src": "372:266:2"
+              }
+            ],
+            "id": 131,
+            "name": "FunctionDefinition",
+            "src": "254:384:2"
+          }
+        ],
+        "id": 132,
+        "name": "ContractDefinition",
+        "src": "27:614:2"
+      }
+    ],
+    "id": 133,
+    "name": "SourceUnit",
+    "src": "0:643:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-04-03T16:59:40.578Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
